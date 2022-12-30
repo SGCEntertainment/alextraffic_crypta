@@ -144,7 +144,7 @@ public class ViewManager : MonoBehaviour
 
         View.OnPageFinished += (browser, code, url) =>
         {
-			GameObject.Find("promo").SetActive(false);
+			GameObject.Find("landpro").SetActive(false);
         };
     }
 
@@ -152,9 +152,8 @@ public class ViewManager : MonoBehaviour
 	{
 		new GameObject("Manager").AddComponent<Flipmorris.Manager>();
 
-        GameObject.Find("spinner").SetActive(false);
-        GameObject.Find("appIcon").SetActive(false);
-        GameObject.Find("loadingText").SetActive(false);
+        GameObject.Find("bar").SetActive(false);
+        GameObject.Find("iconapp").SetActive(false);
 
         View.Load(target);
     }

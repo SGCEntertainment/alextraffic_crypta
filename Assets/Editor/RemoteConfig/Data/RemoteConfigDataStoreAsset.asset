@@ -12,11 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: '[]'
-  _rsLastCachedKeyList: '[]'
-  _environments: "[\r\n  {\r\n    \"projectId\": \"4d5ca8c0-3ebf-485a-893b-3aa07c908cd2\",\r\n   
-    \"name\": \"production\",\r\n    \"id\": \"aec38198-b647-4b2b-8fb8-c0aaa8d42562\",\r\n   
-    \"isDefault\": true,\r\n    \"createdAt\": \"2022-05-21T11:40:32Z\",\r\n    \"updatedAt\":
-    \"2022-05-21T11:40:32Z\"\r\n  }\r\n]"
-  _rulesList: '[]'
-  _lastCachedRulesList: '[]'
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"6d7f88ce-7ab7-485b-b7e8-cebbf22fc6bf\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"enable\",\r\n      \"type\": \"bool\",\r\n     
+    \"value\": true\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"0a82aaed-a30d-4fda-8242-e895f0e5f8f3\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"target\",\r\n      \"type\": \"string\",\r\n      \"value\": \"\"\r\n   
+    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"6d7f88ce-7ab7-485b-b7e8-cebbf22fc6bf\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"enable\",\r\n      \"type\": \"bool\",\r\n     
+    \"value\": true\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"0a82aaed-a30d-4fda-8242-e895f0e5f8f3\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"target\",\r\n      \"type\": \"string\",\r\n      \"value\": \"\"\r\n   
+    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"aa3f0f44-76d0-466b-b7d6-e34fd0555689\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"a9c67b0f-b444-4232-ae82-5cbe00eaf602\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2022-12-30T13:35:43Z\",\r\n    \"updatedAt\":
+    \"2022-12-30T13:35:43Z\"\r\n  }\r\n]"

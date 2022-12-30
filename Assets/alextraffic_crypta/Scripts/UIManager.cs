@@ -7,6 +7,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] ScrollRect scrollRect;
 
     [Space(10)]
+    [SerializeField] GameObject popup;
+
+    [Space(10)]
     [SerializeField] GameObject[] pages;
 
     private void Awake()
@@ -21,5 +24,10 @@ public class UIManager : MonoBehaviour
 
             scrollRect.content = pages[id].GetComponent<RectTransform>();
         };
+    }
+
+    public void ShowPopup(bool IsOpened)
+    {
+        popup.SetActive(IsOpened);
     }
 }
