@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 using Unity.Services.Authentication;
@@ -9,7 +8,6 @@ public class ViewManager : MonoBehaviour
 {
     UniWebView View { get; set; }
 
-    bool servicesInitialized;
 	string target;
 
 	delegate void FinalActionHandler(string campaign);
@@ -58,12 +56,9 @@ public class ViewManager : MonoBehaviour
 
             target = RemoteConfigService.Instance.appConfig.GetString("target");
             OnFinalActionEvent?.Invoke(target);
-
-            servicesInitialized = true;
         };
 
 		await RemoteConfigService.Instance.FetchConfigsAsync(new UserAttributes(), new AppAttributes());
-		servicesInitialized = true;
 	}
 
 	async Task InitializeRemoteConfigAsync()
