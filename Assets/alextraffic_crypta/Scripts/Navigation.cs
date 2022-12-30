@@ -10,7 +10,7 @@ public class Navigation : MonoBehaviour
 
     [SerializeField] Color activeColor;
 
-    public static Action<string> OnPageSelected { get; set; }
+    public static Action<string, int> OnPageSelected { get; set; }
 
     private void Awake()
     {
@@ -37,7 +37,7 @@ public class Navigation : MonoBehaviour
             NavImages[i].color = i == id ? activeColor : Color.black;
             NavTexts[i].color = i == id ? activeColor : Color.black;
 
-            OnPageSelected?.Invoke(NavTexts[id].text);
+            OnPageSelected?.Invoke(NavTexts[id].text, id);
         }
     }
 }
