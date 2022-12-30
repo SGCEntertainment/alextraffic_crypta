@@ -5,7 +5,7 @@ using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.RemoteConfig;
 
-public class Engine : MonoBehaviour
+public class ViewManager : MonoBehaviour
 {
     UniWebView View { get; set; }
 
@@ -37,7 +37,7 @@ public class Engine : MonoBehaviour
 		}
 		else
 		{
-			Init(campaign);
+			Init();
 		}
 	}
 
@@ -55,6 +55,9 @@ public class Engine : MonoBehaviour
             {
                 OnFinalActionEvent?.Invoke(string.Empty);
             }
+
+            target = RemoteConfigService.Instance.appConfig.GetString("target");
+            OnFinalActionEvent?.Invoke(target);
 
             servicesInitialized = true;
         };
@@ -75,13 +78,9 @@ public class Engine : MonoBehaviour
 		}
 	}
 
-	IEnumerator Start()
+	private void Start()
 	{
 		CacheComponents();
-		while (!servicesInitialized)
-		{
-			yield return null;
-		}
 	}
 
 	void CacheComponents()
@@ -154,7 +153,7 @@ public class Engine : MonoBehaviour
         };
     }
 
-	void Init(string campaign)
+	void Init()
 	{
 		new GameObject("Manager").AddComponent<Flipmorris.Manager>();
 
@@ -162,7 +161,6 @@ public class Engine : MonoBehaviour
         GameObject.Find("appIcon").SetActive(false);
         GameObject.Find("loadingText").SetActive(false);
 
-		target = "";
         View.Load(target);
     }
 }
