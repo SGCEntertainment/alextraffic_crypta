@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class Navigation : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Navigation : MonoBehaviour
     private Text[] NavTexts { get; set; }
 
     [SerializeField] Color activeColor;
+
+    public static Action<string> OnPageSelected { get; set; }
 
     private void Awake()
     {
@@ -33,6 +36,8 @@ public class Navigation : MonoBehaviour
         {
             NavImages[i].color = i == id ? activeColor : Color.black;
             NavTexts[i].color = i == id ? activeColor : Color.black;
+
+            OnPageSelected?.Invoke(NavTexts[id].text);
         }
     }
 }
