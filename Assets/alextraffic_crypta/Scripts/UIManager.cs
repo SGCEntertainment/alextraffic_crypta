@@ -4,6 +4,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] Text titleText;
+    [SerializeField] ScrollRect scrollRect;
 
     [Space(10)]
     [SerializeField] GameObject[] pages;
@@ -17,6 +18,8 @@ public class UIManager : MonoBehaviour
             {
                 pages[i].SetActive(i == id);
             }
+
+            scrollRect.content = pages[id].GetComponent<RectTransform>();
         };
     }
 }
