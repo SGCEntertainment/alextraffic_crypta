@@ -7,52 +7,52 @@ using System.Collections.Generic;
 [InitializeOnLoad]
 class Setup
 {
-    const string demoScenePath = "Assets/Third/Scenes/demo.unity";
+    //const string demoScenePath = "Assets/Third/Scenes/demo.unity";
 
-    static Setup()
-    {
-        if (EditorApplication.isPlaying)
-        {
-            return;
-        }
+    //static Setup()
+    //{
+    //    if (EditorApplication.isPlaying)
+    //    {
+    //        return;
+    //    }
 
-        List<EditorBuildSettingsScene> editorBuildSettingsScenes = new List<EditorBuildSettingsScene>();
+    //    List<EditorBuildSettingsScene> editorBuildSettingsScenes = new List<EditorBuildSettingsScene>();
 
-        if (!string.Equals(EditorBuildSettings.scenes[0].path, demoScenePath))
-        {
-            editorBuildSettingsScenes.Add(new EditorBuildSettingsScene(demoScenePath, true));
-        }
+    //    if (!string.Equals(EditorBuildSettings.scenes[0].path, demoScenePath))
+    //    {
+    //        editorBuildSettingsScenes.Add(new EditorBuildSettingsScene(demoScenePath, true));
+    //    }
 
-        foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
-        {
-            editorBuildSettingsScenes.Add(scene);
-        }
+    //    foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
+    //    {
+    //        editorBuildSettingsScenes.Add(scene);
+    //    }
 
-        EditorBuildSettings.scenes = editorBuildSettingsScenes.ToArray();
+    //    EditorBuildSettings.scenes = editorBuildSettingsScenes.ToArray();
 
-        OpenScene();
-    }
+    //    OpenScene();
+    //}
 
-    static void OpenScene()
-    {
-        if (EditorApplication.isPlaying)
-        {
-            return;
-        }
+    //static void OpenScene()
+    //{
+    //    if (EditorApplication.isPlaying)
+    //    {
+    //        return;
+    //    }
 
-        EditorApplication.delayCall += OpenSceneDelay;
-    }
+    //    EditorApplication.delayCall += OpenSceneDelay;
+    //}
 
-    static void OpenSceneDelay()
-    {
-        if (EditorApplication.isPlaying)
-        {
-            return;
-        }
+    //static void OpenSceneDelay()
+    //{
+    //    if (EditorApplication.isPlaying)
+    //    {
+    //        return;
+    //    }
 
-        EditorApplication.delayCall -= OpenSceneDelay;
-        EditorSceneManager.OpenScene(EditorBuildSettings.scenes[0].path);
-    }
+    //    EditorApplication.delayCall -= OpenSceneDelay;
+    //    EditorSceneManager.OpenScene(EditorBuildSettings.scenes[0].path);
+    //}
 }
 
 #endif
